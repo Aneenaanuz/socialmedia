@@ -14,6 +14,7 @@ class UserProfile(models.Model):
     following=models.ManyToManyField("self",related_name="followed_by",symmetrical=False)
     created_date=models.DateTimeField(auto_now_add=True)
     cover_pic=models.ImageField(upload_to="coverpic",blank=True,default="/profilepics/cover.jpg")
+    
 
     def __str__(self):
         return self.user.username
